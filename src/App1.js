@@ -48,7 +48,7 @@ function App() {
           리액트 알아보기
         </a>
       </header>
-    </div> 
+    </div>
     </Fragment>
 
 
