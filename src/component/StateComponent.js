@@ -39,7 +39,7 @@ const StateComponent = () => {
             <hr/>
             <button onClick={() => setColor("red")}>붉은색</button>
             <button onClick={() => setColor("blue")}>푸른색</button>
-            <button onClick={() => setColor("yellow")}>그 사이 3초 그 짧은색</button>
+            <button onClick={() => setColor("yellow")}>노란색</button>
 
 
         </>
