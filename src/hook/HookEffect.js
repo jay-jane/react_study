@@ -23,10 +23,19 @@ const HookEffect = () => {
     // }, []);
 
     //useEffect(함수, [state]) - 특정 값이 렌더링 될 때만 실행
+    // useEffect(() => {
+    //     console.log(`state값 : ${age}`);
+    // }, [age/* , name */]);
+    
     useEffect(() => {
-        console.log(`state값 : ${age}`);
-    }, [age/* , name */]);
-
+        console.log('name이 변경될 때 rendering')
+        //컴포넌트가 unmount 될 때 실행됩니다.
+        return () => {
+            console.log(('unmount됩니다')); //렌더링이 그려지면, 기존화면은 지워진다.
+            console.log(`update전 값:${name}`); //state는 직전 값이 나온다.      
+        }
+    }, [name]);
+    
     return (
         <>
             이름 : <input type="text" onChange={handleName}/><br/>
@@ -35,6 +44,8 @@ const HookEffect = () => {
             이름 : {name}, 나이 : {age}
         </>
     )
+
+    
 }
 
 export default HookEffect;

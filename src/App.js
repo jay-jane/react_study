@@ -1,19 +1,31 @@
 import { Fragment } from "react";
-import IterationComponent from "./component/IterationComponent";
-import IterationComponent2 from "./component/IterationComponent2";
-import IterationComponentQ from "./component/IterationComponentQ";
-import IterationComponentQ2 from "./component/IterationComponentQ2";
+import './css/App.css'; //css파일 경로
+import styleModule from './css/App.module.css';
 
 const App = () => {
-    //컴포넌트 반복 p.180
-    //map(콜백(item, index, arr))
+
+    //카멜표기법
+    const headStyle = {
+        color: "green",
+        textAlign: "center"
+    }
+
     return (
+
         <Fragment>
-            <IterationComponent/><hr/>
-            <IterationComponent2/><hr/>
-            
-            <IterationComponentQ/><hr/>
-            <IterationComponentQ2/>
+            <header style={{ backgroundColor: "palegreen" }} className="app_header">
+                <p style={headStyle}>헤더(직접스타일링)</p>
+            </header>
+            <article className="app_article">
+                css파일로 디자인
+            </article>
+            <section className={styleModule.app_wrap}>
+                <div className={styleModule.app_item}>
+                    <p>css디자인</p>
+                    <input className="input_control" type="text" />
+                    <input className="input_control" type="password" />
+                </div>
+            </section>
         </Fragment>
     )
 }
